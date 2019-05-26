@@ -1,3 +1,5 @@
+.DS_Store
+
 # Built application files
 *.apk
 *.ap_
@@ -124,3 +126,4 @@ fabric.properties
 
 # Editor-based Rest Client
 .idea/httpRequests
+
