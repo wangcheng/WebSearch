@@ -7,14 +7,13 @@ import android.net.Uri;
 import android.os.Bundle;
 
 public class SearchActivity extends Activity {
-  static private String engine = "https://google.com/search?q=";
-
   static Intent getSearchIntent(String query) {
     Uri urlFromQuery = Uri.parse(query);
     if(urlFromQuery.isAbsolute()){
       return new Intent(Intent.ACTION_VIEW, urlFromQuery);
     }
-    Uri url = Uri.parse(engine + query);
+    Uri.Builder builder = new Uri.Builder();
+    Uri url = builder.scheme("https").authority("www.google.com").appendPath("search").appendQueryParameter("q", query).build();
     return new Intent(Intent.ACTION_VIEW, url);
   }
 
