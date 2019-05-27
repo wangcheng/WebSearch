@@ -10,6 +10,10 @@ public class SearchActivity extends Activity {
   static private String engine = "https://google.com/search?q=";
 
   static Intent getSearchIntent(String query) {
+    Uri urlFromQuery = Uri.parse(query);
+    if(urlFromQuery.isAbsolute()){
+      return new Intent(Intent.ACTION_VIEW, urlFromQuery);
+    }
     Uri url = Uri.parse(engine + query);
     return new Intent(Intent.ACTION_VIEW, url);
   }
