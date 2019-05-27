@@ -1,4 +1,4 @@
 <resources>
-  <string name="app_name">WebSearch</string>
-  <string name="search_label">Google</string>
+    <string name="app_name">WebSearch</string>
+    <string name="search_label">Google</string>
 </resources>
